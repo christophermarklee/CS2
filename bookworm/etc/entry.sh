@@ -105,13 +105,6 @@ sed -i -e "s/{{SERVER_HOSTNAME}}/${CS2_SERVERNAME}/g" \
        -e "s/{{SERVER_HIBERNATE}}/${CS2_SERVER_HIBERNATE}/g" \
        -e "s/{{SERVER_PW}}/${CS2_PW}/g" \
        -e "s/{{SERVER_RCON_PW}}/${CS2_RCONPW}/g" \
-       -e "s/{{TV_ENABLE}}/${TV_ENABLE}/g" \
-       -e "s/{{TV_PORT}}/${TV_PORT}/g" \
-       -e "s/{{TV_AUTORECORD}}/${TV_AUTORECORD}/g" \
-       -e "s/{{TV_PW}}/${TV_PW}/g" \
-       -e "s/{{TV_RELAY_PW}}/${TV_RELAY_PW}/g" \
-       -e "s/{{TV_MAXRATE}}/${TV_MAXRATE}/g" \
-       -e "s/{{TV_DELAY}}/${TV_DELAY}/g" \
        -e "s/{{SERVER_LOG}}/${CS2_LOG}/g" \
        -e "s/{{SERVER_LOG_MONEY}}/${CS2_LOG_MONEY}/g" \
        -e "s/{{SERVER_LOG_DETAIL}}/${CS2_LOG_DETAIL}/g" \
@@ -187,6 +180,9 @@ eval "./cs2" -dedicated \
         -console \
         -usercon \
         -maxplayers "${CS2_MAXPLAYERS}" \
+        -maxplayers_override "${CS2_MAXPLAYERS}" \
+        -tickrate 128 \
+        -net_port_try 1 \
         "${CS2_GAME_MODE_ARGS}" \
         "${CS2_MAPGROUP_ARGS}" \
         +map "${CS2_STARTMAP}" \
@@ -196,8 +192,6 @@ eval "./cs2" -dedicated \
         +rcon_password "${CS2_RCONPW}" \
         "${SV_SETSTEAMACCOUNT_ARGS}" \
         "${CS2_PW_ARGS}" \
-        +sv_lan "${CS2_LAN}" \
-        +tv_port "${TV_PORT}" \
         "${CS2_ADDITIONAL_ARGS}"
 
 # Post Hook

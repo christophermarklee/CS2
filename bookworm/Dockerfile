@@ -6,7 +6,7 @@
 
 FROM cm2network/steamcmd:root-bookworm as build_stage
 
-LABEL maintainer="joedwards32@gmail.com"
+LABEL maintainer="christopher@agilityqa.com"
 
 ENV STEAMAPPID 730
 ENV STEAMAPP cs2
