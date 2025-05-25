@@ -6,12 +6,8 @@ name: Docker Build and Publish
 # documentation.
 
 on:
-  schedule:
-    - cron: '21 5 * * 0'
-  push:
-    branches: [ "main" ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
+  # manual
+  workflow_dispatch:
   pull_request:
     branches: [ "main" ]
 
