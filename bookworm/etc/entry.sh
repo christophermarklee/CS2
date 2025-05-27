@@ -185,7 +185,7 @@ eval "./cs2" -dedicated \
         -net_port_try 1 \
         "${CS2_GAME_MODE_ARGS}" \
         "${CS2_MAPGROUP_ARGS}" \
-        +map "${CS2_STARTMAP}" \
+        +map "cs_italy" \
         "${CS2_HOST_WORKSHOP_COLLECTION_ARGS}" \
         "${CS2_HOST_WORKSHOP_MAP_ARGS}" \
         "${CS2_MP_MATCH_END_CHANGELEVEL}" \
